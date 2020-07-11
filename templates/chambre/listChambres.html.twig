@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chambre index{% endblock %}
+
+{% block body %}
+    <h1>Liste Chambres</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numch</th>
+                <th>Numbatiment</th>
+                <th>Type_chambre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chambre in chambres %}
+            <tr>
+                <td>{{ chambre.id }}</td>
+                <td>{{ chambre.numch }}</td>
+                <td>{{ chambre.numbatiment }}</td>
+                <td>{{ chambre.typeChambre }}</td>
+                <td><button type="button" class="btn btn-warning" id="update">UPDATE</button> </td>
+                <td><button type="button" class="btn btn-danger" id = "delete">DELETE</button> </td>
+
+            </tr>
+        {% endfor %}
+  
+{% endblock %}
+
+{% block javascripts %}
+        {{ parent() }}
+    <script>
+        $(document).ready(function(){
+         
+        })
+    </script>
+
+{% endblock %}

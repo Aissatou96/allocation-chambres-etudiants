@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title' Update Etudiant #'~ etudiant.id %}
+
+{% block body %}
+ <h1>Update Etudiant # {{etudiant.id}}</h1>
+ {{form_start(form)}}
+    {{form_widget(form)}}
+    <input type="submit" id="updateEtud" value="UPDATE">
+ {{form_end(form)}}
+
+{% endblock %}

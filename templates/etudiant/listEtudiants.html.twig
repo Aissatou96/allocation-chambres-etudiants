@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudiant index{% endblock %}
+
+{% block body %}
+    <h1>Liste Etudiants</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Matricule</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Date_naissance</th>
+                <th>Type_etudiant</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etudiant in etudiants %}
+            <tr>
+                <td>{{ etudiant.id }}</td>
+                <td>{{ etudiant.matricule }}</td>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.email }}</td>
+                <td>{{ etudiant.telephone }}</td>
+                <td>{{ etudiant.dateNaissance ? etudiant.dateNaissance|date('Y-m-d') : '' }}</td>
+                <td>{{ etudiant.typeEtudiant }}</td>
+        
+                <td><button type="button" class="btn btn-warning" id="update">UPDATE</button> </td>
+                <td><button type="button" class="btn btn-danger" id = "delete">DELETE</button> </td>
+                  
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block javascripts %}
+        {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            
+          $('#update').on('click', function(){
+            alert("ok")
+         
+            
+             
+          })
+        })
+    </script>
+
+{% endblock %}

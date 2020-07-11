@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title' New Chambre'%}
+
+
+{% block body %}
+ <h1>Enregistrer une chambre</h1>
+ {{form_start(form)}}
+    {{form_widget(form)}}
+    <input type="submit" id="createCh" value="ENREGISTRER" formnovalidate>
+ {{form_end(form)}}
+
+{% endblock %}
+
+
+
+
